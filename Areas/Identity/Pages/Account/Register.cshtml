@@ -1,0 +1,86 @@
+﻿@page
+@model musafir.Areas.Identity.Pages.Account.RegisterModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+    ViewData["Title"] = "Create account";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create account | Musafir</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body class="auth-page">
+    <nav class="navbar site-nav">
+        <div class="container">
+            <a class="brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark">M</span> musafir<span class="brand-period">.</span>
+            </a>
+            <a class="back-home" asp-area="" asp-controller="Home" asp-action="Index">← Back to home</a>
+        </div>
+    </nav>
+
+    <div class="auth-main">
+        <div class="auth-image signup-image">
+            <div class="auth-image-overlay"></div>
+            <div class="auth-image-copy">
+                <div class="eyebrow text-white">
+                    <span class="eyebrow-line"></span> MAKE ROOM FOR ADVENTURE
+                </div>
+                <h1>New places. <em>New stories.</em></h1>
+                <p>Create your account and bring your next journey into focus.</p>
+                <span class="image-credit-line">MUSAFIR · EXPLORE PAKISTAN</span>
+            </div>
+        </div>
+
+        <div class="auth-form-side">
+            <div class="auth-form-wrap">
+                <span class="section-kicker">YOUR NEXT CHAPTER</span>
+                <h2>Let's get you <em>started.</em></h2>
+                <p class="auth-subtitle">Create an account to keep your travel plans in one place.</p>
+
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.FullName" class="form-label">Full name</label>
+                        <input asp-for="Input.FullName" class="form-control auth-input" aria-required="true" />
+                        <span asp-validation-for="Input.FullName" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Email" class="form-label">Email address</label>
+                        <input asp-for="Input.Email" class="form-control auth-input" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Password" class="form-label">Password</label>
+                        <input asp-for="Input.Password" class="form-control auth-input" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Input.ConfirmPassword" class="form-label">Confirm password</label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control auth-input" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
+                    </div>
+
+                    <button id="registerSubmit" type="submit" class="btn btn-dark-green w-100">Create account ↗</button>
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Log in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

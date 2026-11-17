@@ -1,0 +1,189 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Compare fares";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare fares | Musafir</title>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+</head>
+
+<body class="app-page">
+
+    <nav class="navbar navbar-expand-lg site-nav">
+
+        <div class="container">
+
+            <a class="navbar-brand brand"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index">
+
+                <span class="brand-mark">M</span>
+                musafir<span class="brand-period">.</span>
+
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Dashboard"
+                           asp-action="Index">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Trips"
+                           asp-action="Plan">
+                            Plan a trip
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           asp-controller="Trips"
+                           asp-action="Compare">
+                            Compare fares
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Explore"
+                           asp-action="Directory">
+                            Explore
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="nav-actions ms-lg-4">
+
+                    <form asp-area="Identity"
+                          asp-page="/Account/Logout"
+                          asp-route-returnUrl="@Url.Action("Index", "Home")"
+                          method="post">
+
+                        <button type="submit" class="btn btn-login">
+                            Log out ↗
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <main class="app-main">
+
+        <div class="container py-5">
+
+            <div class="dashboard-welcome reveal">
+
+                <div>
+
+                    <span class="section-kicker">
+                        02 / TRANSPORT COMPARISON
+                    </span>
+
+                    <h1>
+                        Compare <em>fares &amp; modes.</em>
+                    </h1>
+
+                    <p>
+                        Evaluate estimated bus, flight, and private car
+                        expenses side by side.
+                    </p>
+
+                </div>
+
+
+                <a class="btn btn-login"
+                   asp-controller="Dashboard"
+                   asp-action="Index">
+
+                    ← Back to Dashboard
+
+                </a>
+
+            </div>
+
+
+            <div class="planner-card reveal">
+
+                <span class="section-kicker">MODULE READY</span>
+
+                <h3>Multi-Modal Fare Comparison</h3>
+
+                <p class="text-muted mb-0">
+                    Dynamic fare calculation and duration estimates
+                    across travel modes will be implemented in the next phase.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <a class="brand footer-brand"
+               asp-controller="Home"
+               asp-action="Index">
+
+                <span class="brand-mark">M</span>
+                musafir<span class="brand-period">.</span>
+
+            </a>
+
+            <p>Plan thoughtfully. Travel freely.</p>
+
+            <small>
+                © 2026 Musafir. A travel planning concept for Pakistan.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>

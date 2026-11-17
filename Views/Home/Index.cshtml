@@ -1,0 +1,214 @@
+﻿@{
+    ViewData["Title"] = "Plan your journey";
+}
+
+<section class="hero-section">
+    <div class="hero-decoration">M</div>
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 hero-copy">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span> YOUR JOURNEY, BETTER PLANNED
+                </div>
+                <h1>Pakistan is waiting. <em>Let's get you there.</em></h1>
+                <p class="hero-text">
+                    Plan journeys across cities, compare travel options and get a clearer picture of your travel costs, all in one place.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#planner" class="btn btn-dark-green btn-lg">Plan a journey ↗</a>
+                    <a href="#how-it-works" class="text-link">See how it works →</a>
+                </div>
+                <p class="hero-note">
+                    <span class="note-icon">✳</span> Made for exploring Pakistan, one stop at a time.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="floating-stamp">
+                        <span>TRAVEL</span>
+                        <strong>PK</strong>
+                        <span>YOUR WAY</span>
+                    </div>
+                    <img src="/images/hero.jpg" alt="Mountain lake and winding landscape" />
+
+                    <div class="image-label">
+                        <span class="label-dot"></span>
+                        <div>
+                            <strong>Take the scenic route</strong>
+                            <small>More possibilities. One plan.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="planner" class="planner-wrap">
+    <div class="container">
+        <div class="planner-card">
+            <div class="planner-heading">
+                <div>
+                    <span class="section-kicker">START EXPLORING</span>
+                    <h2>Where would you like to go?</h2>
+                </div>
+                <span class="planner-icon">⌖</span>
+            </div>
+
+            <form id="journeySearchForm" class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label for="originInput" class="form-label">Starting city</label>
+                    <div class="input-with-icon">
+                        <span>✳</span>
+                        <input type="text" id="originInput" class="form-control" placeholder="e.g. Lahore" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="destinationInput" class="form-label">Destination</label>
+                    <div class="input-with-icon">
+                        <span>⌖</span>
+                        <input type="text" id="destinationInput" class="form-control" placeholder="e.g. Islamabad" required />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label for="stopsSelect" class="form-label">Stops</label>
+                    <select id="stopsSelect" class="form-select">
+                        <option value="0">None</option>
+                        <option value="1">1 stop</option>
+                        <option value="2">2 stops</option>
+                        <option value="3">3 stops</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-dark-green w-100 search-btn">Explore <span>↗</span></button>
+                </div>
+            </form>
+
+            <div id="routeResults" class="mt-3"></div>
+        </div>
+    </div>
+</section>
+
+<section id="how-it-works" class="section-space">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-kicker">A SIMPLER WAY TO TRAVEL</span>
+            <h2>From “where to?” to <em>“let's go.”</em></h2>
+            <p>Bring the important parts of your journey together before you set off.</p>
+        </div>
+        <div class="row g-4 steps-row">
+            <div class="col-md-4">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <div class="step-symbol">⌖</div>
+                    <h3>Choose your route</h3>
+                    <p>Enter your starting point, destination and any cities you would like to visit along the way.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <div class="step-symbol">⇄</div>
+                    <h3>Compare your options</h3>
+                    <p>Explore estimated fares, journey durations and distances across different travel modes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <div class="step-symbol">✧</div>
+                    <h3>Plan with clarity</h3>
+                    <p>Review each journey segment and see an overall estimate for your multi-city trip.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="explore-features" class="section-space options-section">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-6">
+                <span class="section-kicker">TRAVEL THAT FITS YOUR PLAN</span>
+                <h2>Different ways to get there. <em>One place to compare.</em></h2>
+            </div>
+            <div class="col-lg-6">
+                <p class="section-intro">
+                    Whether you prefer the convenience of a flight or the flexibility of the road, understand your options before you decide.
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="mode-card mode-bus">
+                    <div class="mode-top">
+                        <span class="mode-icon">▰</span>
+                        <span class="mode-index">01 / ROAD</span>
+                    </div>
+                    <h3>Bus travel</h3>
+                    <p>Explore intercity bus options and compare estimated journey costs.</p>
+                    <span class="mode-arrow">↗</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mode-card mode-flight">
+                    <div class="mode-top">
+                        <span class="mode-icon">✈</span>
+                        <span class="mode-index">02 / AIR</span>
+                    </div>
+                    <h3>Flights</h3>
+                    <p>Compare estimated air-travel costs and journey durations.</p>
+                    <span class="mode-arrow">↗</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mode-card mode-car">
+                    <div class="mode-top">
+                        <span class="mode-icon">⌁</span>
+                        <span class="mode-index">03 / DRIVE</span>
+                    </div>
+                    <h3>Private car</h3>
+                    <p>Estimate road distance, driving time and fuel-related expenses.</p>
+                    <span class="mode-arrow">↗</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-panel">
+            <div class="about-mark">M.</div>
+            <div class="about-copy">
+                <span class="section-kicker text-white-50">ABOUT MUSAFIR</span>
+                <h2>Good journeys begin with a <em>clear plan.</em></h2>
+                <p>
+                    Musafir brings intercity travel information into one organised view. Plan routes with multiple stops, compare estimated transportation costs and explore useful travel information for your destinations.
+                </p>
+                <a href="#planner" class="text-link light-link">Start planning with Musafir ↗</a>
+            </div>
+            <div class="about-decoration">PAKISTAN IS YOURS TO EXPLORE.</div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#journeySearchForm").on("submit", function (e) {
+                e.preventDefault();
+                var origin = $("#originInput").val();
+                var destination = $("#destinationInput").val();
+                var stops = $("#stopsSelect").val();
+
+                $("#routeResults").html(
+                    '<div class="demo-message">' +
+                    '<strong>' + origin + ' → ' + destination + '</strong> (' + stops + ' stop(s)) — ' +
+                    'Route ready. Log in or create an account to save your trip.' +
+                    '</div>'
+                ).hide().fadeIn(200);
+            });
+        });
+    </script>
+}

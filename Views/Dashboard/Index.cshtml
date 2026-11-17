@@ -1,0 +1,346 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using musafir.Data
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Musafir</title>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+</head>
+
+<body class="app-page">
+
+    <nav class="navbar navbar-expand-lg site-nav">
+        <div class="container">
+
+            <a class="navbar-brand brand"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index">
+                <span class="brand-mark">M</span> musafir<span class="brand-period">.</span>
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           asp-area=""
+                           asp-controller="Dashboard"
+                           asp-action="Index">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Trips"
+                           asp-action="Plan">
+                            Plan a trip
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Trips"
+                           asp-action="Compare">
+                            Compare fares
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Explore"
+                           asp-action="Directory">
+                            Explore
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-actions ms-lg-4">
+
+                    <form asp-area="Identity"
+                          asp-page="/Account/Logout"
+                          asp-route-returnUrl="@Url.Action("Index", "Home")"
+                          method="post">
+
+                        <button type="submit" class="btn btn-login">
+                            Log out ↗
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="app-main">
+
+        <div class="container py-5">
+
+            <div class="dashboard-welcome reveal">
+
+                <div>
+                    <span class="section-kicker">
+                        YOUR TRAVEL SPACE · PAKISTAN
+                    </span>
+
+                    <h1>
+                        Salam, <em>@(ViewBag.FullName ?? "traveller").</em>
+                    </h1>
+
+                    <p>Where would you like the road to take you?</p>
+                </div>
+
+                <a class="btn btn-dark-green btn-lg"
+                   asp-area=""
+                   asp-controller="Trips"
+                   asp-action="Plan">
+                    Plan a new trip <span class="ms-2">↗</span>
+                </a>
+
+            </div>
+
+
+            <section class="quick-launch reveal">
+
+                <div class="quick-launch-copy">
+
+                    <span class="section-kicker">START WITH A ROUTE</span>
+
+                    <h2>
+                        Your next journey,<br>
+                        <em>all mapped out.</em>
+                    </h2>
+
+                    <p>
+                        Choose your cities, add the stops in between,
+                        and see the journey one leg at a time.
+                    </p>
+
+                    <a class="text-link"
+                       asp-area=""
+                       asp-controller="Trips"
+                       asp-action="Plan">
+                        Open trip planner <span>↗</span>
+                    </a>
+
+                </div>
+
+                <div class="quick-route-art">
+
+                    <div class="route-art-line"></div>
+
+                    <span class="route-pin pin-a">LHE</span>
+                    <span class="route-pin pin-b">ISB</span>
+                    <span class="route-pin pin-c">NTH</span>
+
+                    <div class="route-art-label">
+                        A route with room<br>
+                        for detours.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="section-heading-inline reveal">
+
+                <div>
+                    <span class="section-kicker">MUSAFIR WORKSPACE</span>
+                    <h2>Everything for the journey.</h2>
+                </div>
+
+                <span class="muted-note">
+                    Choose a module to continue
+                </span>
+
+            </div>
+
+
+            <div class="row g-3 module-grid">
+
+                <div class="col-md-6 col-xl-4 reveal">
+
+                    <a class="module-card"
+                       asp-area=""
+                       asp-controller="Trips"
+                       asp-action="Plan">
+
+                        <div class="module-card-top">
+                            <span class="module-symbol">⌖</span>
+                            <span class="module-number">01 / PLAN</span>
+                        </div>
+
+                        <h3>Multi-stop planner</h3>
+
+                        <p>
+                            Set your origin, add cities along the way
+                            and organise your route into individual legs.
+                        </p>
+
+                        <span class="module-link">
+                            Build an itinerary <b>↗</b>
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-6 col-xl-4 reveal">
+
+                    <a class="module-card module-card-tint"
+                       asp-area=""
+                       asp-controller="Trips"
+                       asp-action="Compare">
+
+                        <div class="module-card-top">
+                            <span class="module-symbol">⇄</span>
+                            <span class="module-number">02 / COMPARE</span>
+                        </div>
+
+                        <h3>Transport comparison</h3>
+
+                        <p>
+                            Compare estimated bus, flight and private-car
+                            fares with journey durations.
+                        </p>
+
+                        <span class="module-link">
+                            Compare travel modes <b>↗</b>
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-6 col-xl-4 reveal">
+
+                    <a class="module-card module-card-clay"
+                       asp-area=""
+                       asp-controller="Explore"
+                       asp-action="Directory">
+
+                        <div class="module-card-top">
+                            <span class="module-symbol">✳</span>
+                            <span class="module-number">03 / EXPLORE</span>
+                        </div>
+
+                        <h3>City directory</h3>
+
+                        <p>
+                            Find accommodation ideas, local transport
+                            information and operator links.
+                        </p>
+
+                        <span class="module-link">
+                            Explore destinations <b>↗</b>
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <section class="dashboard-note reveal">
+
+                <div>
+                    <span class="section-kicker">A NOTE BEFORE YOU GO</span>
+
+                    <h2>
+                        Plan with estimates.<br>
+                        <em>Confirm before departure.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    Musafir brings useful travel information together
+                    in one place. Fares and durations are estimates,
+                    not confirmed schedules or booking prices.
+                    Always verify details with the relevant operator.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <a class="brand footer-brand"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index">
+
+                <span class="brand-mark">M</span>
+                musafir<span class="brand-period">.</span>
+
+            </a>
+
+            <p>Plan thoughtfully. Travel freely.</p>
+
+            <div class="footer-links">
+
+                <a asp-area="" asp-controller="Trips" asp-action="Plan">
+                    Plan
+                </a>
+
+                <a asp-area="" asp-controller="Trips" asp-action="Compare">
+                    Compare
+                </a>
+
+                <a asp-area="" asp-controller="Explore" asp-action="Directory">
+                    Explore
+                </a>
+
+            </div>
+
+            <small>
+                © 2026 Musafir. A travel planning concept for Pakistan.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
